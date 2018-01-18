@@ -13,7 +13,7 @@ try {
 echo $pdo->exec($req);*/
 ?>
 <?php
-        $req="SELECT * FROM produit";
+        $req="SELECT * FROM produit ORDER BY nom ";
         $jeu=$pdo->query($req);
         $jeu->setFetchMode(PDO::FETCH_OBJ);
         $tab=$jeu->fetchAll();
