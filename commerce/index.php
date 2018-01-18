@@ -7,8 +7,10 @@ try{
 $pdo = new PDO(DSN,LOG,'',OPT);
 }
 catch(PDOException $e){
-    
+ exit("Erreur : {$e->getMessage()}");
 }
+$req="DELETE FROM produit WHERE idProduit=3";
+echo $db->exec($req); 
 ?>
 <!DOCTYPE html>
 <html>
