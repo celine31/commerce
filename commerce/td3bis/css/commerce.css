@@ -1,0 +1,26 @@
+#conteneur{
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    width: 1000px;
+   }
+   .vignette{
+       border:1px solid black;
+       min-width:400px;
+       margin:10px;
+       padding:10px;
+   }
+   img{
+      float:left; 
+   }
+   h1{
+       float: right;
+   }
+   p{
+       clear: both ;
+       text-align:right;
+   }
+   .null{
+       text-align:left;
+       font-size: 25px;
+   }
