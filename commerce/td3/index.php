@@ -29,6 +29,7 @@ $tab = $jeu->fetchAll();
         <?php foreach ($tab as $prod) { 
             $file="img/prod_{$prod->id_produit}_v.jpg"
             ?>
+
         <div class="vignette">
             <?php if (file_exists($file)){?>
             <img src = "img/prod_<?= $prod->id_produit?>_v.jpg" alt= "image"/>
