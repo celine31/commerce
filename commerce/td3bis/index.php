@@ -27,11 +27,11 @@ $tab = $jeu->fetchAll();
     <body>
         <div id ="conteneur"> 
         <?php foreach ($tab as $prod) { 
-            $file=file_exists("img/prod_{$prod->id_produit}_v.jpg")?$prod->id_produit:0;
+            $id_produit=file_exists("img/prod_{$prod->id_produit}_v.jpg")?$prod->id_produit:0;
             ?>
 
         <div class="vignette">
-            <img src = "img/prod_<?= $prod->id_produit?>_v.jpg" alt= "image"/>
+            <img src = "img/prod_<?= $id_produit?>_v.jpg" alt= "image"/>
             <h1><?= $prod->nom ?></h1>
             <p> <?= $prod->prix ?></p>
         </div>
