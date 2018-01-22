@@ -18,6 +18,16 @@
        background-color: #ecc9ff;
        color: #733696;
    }
+   .vignetteDetail{
+       width:1000px;
+   }
+
+   .detailler{
+       position:fixed;
+       bottom:150px;
+       left:800px;
+       font-size:25px;
+   }
    img{
       float:left; 
    }

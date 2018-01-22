@@ -1,7 +1,7 @@
 <?php
 require_once 'inc/cfg.php';
 $req = "SELECT * FROM produit ORDER BY nom ";
-$jeu = $dp->query($req);
+$jeu = $db->query($req);
 $jeu->setFetchMode(PDO::FETCH_OBJ);
 $tab = $jeu->fetchAll();
 ?>        
@@ -11,8 +11,7 @@ $tab = $jeu->fetchAll();
         <meta charset="UTF-8">
         <title>commerce</title>
         <link rel = "stylesheet" href="css/commerce.css"/>
-        <script src="js/index.js"></script>
-
+        <script src="js/index.js" type="text/javascript"></script>
     </head>
     <body>
         <div id ="conteneur"> 

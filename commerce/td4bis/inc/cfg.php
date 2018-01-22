@@ -5,7 +5,7 @@ const LOG = 'root';
 const OPT = [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8mb4'",
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 try {
-    $dp = new PDO(DSN, LOG, '', OPT);
+    $db = new PDO(DSN, LOG, '', OPT);
 } catch (PDOException $e) {
     exit("Erreur : {$e->getMessage()}");
 }
