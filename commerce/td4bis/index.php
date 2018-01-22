@@ -15,13 +15,14 @@ $tab = $jeu->fetchAll();
     </head>
     <body>
         <div id ="conteneur"> 
+            <h1> Produits </h1>
             <?php
             foreach ($tab as $prod) {
                 $id_produit = file_exists("img/prod_{$prod->id_produit}_v.jpg") ? $prod->id_produit : 0;
                 ?>
                 <div class="vignette" onclick="detail(<?= $id_produit ?>)">
                     <img src = "img/prod_<?= $id_produit ?>_v.jpg" alt= "image"/>
-                    <h1><?= $prod->nom ?></h1>
+                    <h2><?= $prod->nom ?></h2>
                     <p> <?= $prod->prix ?></p>
                 </div>
             <?php } ?>

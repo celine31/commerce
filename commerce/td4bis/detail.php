@@ -17,7 +17,7 @@ $prod = $jeu->fetch();
     <body> 
         <div class="vignetteDetail">
             <img src = "img/prod_<?=$prod->id_produit?>_p.jpg" alt= "image"/>
-            <h1><?=$prod->ref?></h1>
+            <h2><?=$prod->ref?></h2>
             <p class="detailler"><?=$prod->prix?></p>
         </div>
         <a href="index.php">Retour</a>

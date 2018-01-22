@@ -8,6 +8,7 @@
     margin:auto;
     padding:10px;
    }
+   
    .vignette{
        border:1px solid black;
        width:400px;
@@ -32,7 +33,7 @@
       float:left; 
    }
    h1{
-       float: right;
+      text-align:center;
    }
    p{
        position:absolute;
