@@ -19,7 +19,7 @@ $tab = Produit::tous();
                 $id_produit = file_exists("img/prod_{$prod->id_produit}_v.jpg") ? $prod->id_produit : 0;
             ?>
             <div class="blocProduit" onclick="detail(<?= $prod->id_produit ?>)">
-                <img src="img/prod_<?= $prod->id_produit ?>_v.jpg" alt=""/>
+                <img src="img/prod_<?= $id_produit ?>_v.jpg" alt=""/>
                 <div class="nom"><?= $prod->nom ?></div>
                 <div class="prix"><?= $prod->prix ?></div>
             </div>  
