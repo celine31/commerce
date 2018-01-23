@@ -35,6 +35,7 @@ a:hover{
 	padding: 5px;
 	background-color: #DDD;
 	cursor: pointer;
+        min-height:250px;
 }
 .blocProduit img{
 	float: left;

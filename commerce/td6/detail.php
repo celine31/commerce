@@ -24,7 +24,8 @@ $id_produit = file_exists("img/prod_{$prod->id_produit}_p.jpg") ? $prod->id_prod
 			<h1><?= $prod->nom ?></h1>
 			<div id="detailProduit">
 				<img src="img/prod_<?= $id_produit ?>_p.jpg" alt=""/>
-				<div class="ref"><?= $prod->ref ?></div>
+                                <div class="categorie"><?=$prod->id_categorie?></div>
+                                <div class="ref"><?= $prod->ref ?></div>
 				<div class="prix"><?= $prod->prix ?></div>
 			</div>
 		</div>
