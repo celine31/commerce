@@ -1,0 +1,80 @@
+@charset "utf-8";
+*{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font-family: verdana;
+}
+body{
+	margin: 10px 0;
+}
+h1{
+	margin: 20px;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	color: #F00;
+}
+#container{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 1000px;
+	margin: auto;
+}
+#container>h1{
+	width: 100%;
+	text-align: center;
+}
+.blocProduit{
+	width: 400px;
+	margin: 0 10px 20px 10px;
+	padding: 5px;
+	background-color: #DDD;
+	cursor: pointer;
+}
+.blocProduit img{
+	float: left;
+}
+.blocProduit .nom{
+	float: right;
+	font-size: 24px;
+}
+.blocProduit .prix{
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	font-size: 24px;
+	font-weight: bold;
+}
+.blocProduit .prix:after{
+	content: ' €';
+}
+#detailProduit{
+	width: 800px;
+	padding: 20px;
+}
+#detailProduit img{
+	margin: -20px;
+}
+#detailProduit .ref{
+	float: right;
+	font-size: 50px;
+}
+#detailProduit .prix{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	font-size: 36px;
+	font-weight: bold;
+}
+#detailProduit .prix:after{
+	content: ' €';
+}
+.retour{
+	width: 100%;
+	text-align: start;
+}
