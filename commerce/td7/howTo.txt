@@ -1,0 +1,29 @@
+1)
+Dans la base "commerce", ajouter une table "categorie" et insérer 3 catégories. Une catégorie a simplement un nom.
+
+2)
+Dans la table "produit", ajouter une colonne "id_categorie" pouvant être nul.
+
+3)
+Relier les 2 tables par une relation dans phpMyAdmin et vérifier avec la vue concepteur.
+
+4)
+Définir les id_categorie des produits.
+
+5)
+Modifier la classe "Produit" en ajoutant l'id_categorie.
+
+6)
+Créer la classe "Categorie" à l'image de la classe "Produit" y compris la méthode "tous()". 
+
+7)
+Dans la classe "Categorie", ajouter la méthode "getTabProduit()" qui retourne un tableau d'instances "Produit" correspondant aux produits de la catégorie.
+
+8)
+Dans la classe "Produit", ajouter la méthode "getCategorie()" qui retourne une instance de la catégorie à laquelle appartient le produit.
+
+9)
+Dans "index.php", afficher les produits regroupés par catégories.
+
+10)
+Dans "detail.php", afficher maintenant la catégorie du produit.
