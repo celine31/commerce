@@ -73,3 +73,18 @@ a:hover{
 	width: 100%;
 	text-align: start;
 }
+input{
+        height:60px;
+        width:60px
+}
+
+input[type="text"]{
+        height:50px;
+        width:150px;
+}
+#categorie{
+    margin-left:auto;
+    margin-right:auto;
+    padding:10px;
+       
+}
