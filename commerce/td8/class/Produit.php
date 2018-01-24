@@ -24,6 +24,13 @@ class Produit {
 		return $jeu->fetch();
 	}
 
+        public function refExiste(){
+                global $db;
+		$req = "SELECT * FROM produit WHERE ref = {$db->quote($this->ref)}";//pour ne pas que les quotes soient interprétés et transformés
+		$jeu = $db->query($req);
+		return (bool)$jeu->fetch();//pour caster 
+        }
+        
 	public static function tous() {
 		global $db;
 		$req = "SELECT * FROM produit ORDER BY nom";

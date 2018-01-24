@@ -20,7 +20,7 @@ $tabCategorie = Categorie::tous();
 				$tabProduit = $categorie->getTabProduit();
 				?>
 				<h2><?= $categorie->nom ?></h2>
-                                 <input type="button" name="bouton" value="Ajouter" onclick="redirection()">
+                                 <input type="button" name="bouton" value="Ajouter" onclick="redirection(<?=$categorie->id_categorie?>)">
                                  <?php
 				foreach ($tabProduit as $produit) {
 					$id_produit = file_exists("img/prod_{$produit->id_produit}_v.jpg") ? $produit->id_produit : 0;

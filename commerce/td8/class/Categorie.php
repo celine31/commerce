@@ -18,6 +18,11 @@ class Categorie {
 		return $jeu->fetchAll();
 	}
 
+        public function existe(){
+                if ($id_categorie==$this->id_categorie)
+                    return true; 
+        }
+        
 	public static function tous() {
 		global $db;
 		$req = "SELECT * FROM categorie ORDER BY nom";

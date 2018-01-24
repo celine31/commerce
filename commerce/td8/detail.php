@@ -2,7 +2,7 @@
 require_once 'inc/cfg.php';
 require_once 'class/Produit.php';
 require_once 'class/Categorie.php';
-$opt=['options'=>['min_range'=>1]];
+
 $id_produit=filter_input(INPUT_GET,'id_produit',FILTER_VALIDATE_INT,$opt);
 if(!$id_produit){
 	header('Location:indispo.php');
