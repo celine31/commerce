@@ -5,7 +5,7 @@ $req = "SELECT * FROM produit WHERE id_produit={$id_produit}";
 $jeu = $db->query($req);
 $jeu->setFetchMode(PDO::FETCH_OBJ);
 $prod = $jeu->fetch();
-/*$id_produit = file_exists("img/prod_{$prod->id_produit}_v.jpg") ? $prod->id_produit : 0;*/
+$id_produit = file_exists("img/prod_{$prod->id_produit}_v.jpg") ? $prod->id_produit : 0;
  ?>   
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,7 @@ $prod = $jeu->fetch();
     <body> 
         <div class="vignetteDetail">
             <img src = "img/prod_<?=$prod->id_produit?>_p.jpg" alt= "image"/>
-            <h2><?=$prod->ref?></h2>
+            <h1><?=$prod->ref?></h1>
             <p class="detailler"><?=$prod->prix?></p>
         </div>
         <a href="index.php">Retour</a>

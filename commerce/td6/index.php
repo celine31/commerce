@@ -2,9 +2,7 @@
 require_once 'inc/cfg.php';
 require_once 'class/Produit.php';
 require_once 'class/Categorie.php';
-$tab = Categorie::tous();
-$cat=new Categorie(2);
-$tab2=$cat->getTabProduit();
+$tabCategorie = Categorie::tous();
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,18 +15,24 @@ $tab2=$cat->getTabProduit();
     <body>
         <div id="container">
             <h1>Produits</h1>                                       
-             <div>
                 <?php
-            foreach ($tab2 as $prod) {
-                $id_produit = file_exists("img/prod_{$prod->id_produit}_v.jpg") ? $prod->id_produit : 0;
-            ?>
-            <div class="blocProduit" onclick="detail(<?= $prod->id_produit ?>)">
-                <img src="img/prod_<?= $id_produit ?>_v.jpg" alt=""/>
-                <div class="nom"><?= $prod->nom ?></div>
-                <div class="prix"><?= $prod->prix ?></div>
+                foreach ($tabCategorie as $categorie) {
+                    $tabProduit = $categorie->getTabProduit();
+                    ?>
+                    <h2><?= $categorie->nom ?></h2>
+                    <?php
+                    foreach ($tabProduit as $produit) {
+                        $id_produit = file_exists("img/prod_{$produit->id_produit}_v.jpg") ? $produit->id_produit : 0;
+                        ?>
+                        <div class="blocProduit" onclick="detail(<?= $produit->id_produit ?>)">
+                            <img src="img/prod_<?= $id_produit ?>_v.jpg" alt=""/>
+                            <div class="nom"><?= $produit->nom ?></div>
+                            <div class="prix"><?= $produit->prix ?></div>
+                        </div>
+                        <?php
+                    }
+                }
+                ?>             
             </div>
-            <?php }?>             
-            </div>
-        </div>
       </body>
 </html>

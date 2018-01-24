@@ -16,7 +16,7 @@ a:hover{
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 1000px;
+	max-width: 1200px;
 	margin: auto;
 }
 #container>h1, #container>h2{
@@ -25,7 +25,7 @@ a:hover{
 	text-align: center;
 }
 .blocProduit{
-	width: 300px;
+	width: 400px;
 	margin: 0 10px 20px 10px;
 	padding: 5px;
 	background-color: #DDD;

@@ -1,5 +1,7 @@
  <?php
  require_once 'inc/cfg.php';
+ require_once 'class/Categorie.php';
+ require_once 'class/Produit.php';
 
 class Produit {
     public $id_produit;
@@ -26,7 +28,7 @@ class Produit {
        
     public function getProduit(){
         global $db;
-        $req = "SELECT * FROM categorie WHERE id_categorie={$this->id_categorie} ";
+        $req = "SELECT * FROM categorie WHERE id_categorie={$this->id_categorie}";
         $jeu = $db->query($req);
         $jeu->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Categorie');
         return $jeu->fetch();
