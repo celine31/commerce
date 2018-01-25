@@ -1,0 +1,29 @@
+1)
+Dans "index.php", placer un bouton "Ajouter un produit" en vis à vis de chaque catégorie. Il mène à une nouvelle vue "editer.php" en lui passant en GET l'id_categorie.
+
+2)
+Créer la vue "editer.php" qui contient un formulaire de saisie d'un nouveau produit :
+	- Un menu déroulant des catégories.
+	- Un champ pour le nom.
+	- Un champ pour la référence.
+	- Un champ pour le prix.
+	- Un bouton "Annuler" qui renvoie à "index.php".
+	- Un bouton "Enregistrer" qui envoie en POST le formulaire vers "editer.php".
+
+3)
+Caler le menu déroulant des catégories sur la catégorie choisie.
+
+4)
+Tester la variable POST "submit" pour savoir si des données POST sont arrivées. Créer une instance de "Produit" et lui affecter les données POST récupérées.
+
+5)
+Dans la classe "Produit", coder la méthode "refExiste()". L'utiliser pour vérifier la référence reçue en POST.
+
+7)
+Initialiser un tableau vide "$tabErreur" en début de contrôleur. Lui ajouter un message d'erreur pour chaque erreur au cours de la vérification des données POST.
+
+8)
+Si les données sont valides, faire l'INSERT en bases et rediriger vers "index.php". Si au contraire, des données sont invalides, réafficher le formulaire avec les valeurs précédemment saisies.
+
+9)
+Au début de la vue, afficher chacune des erreurs de "$tabErreur".
