@@ -11,6 +11,7 @@ $tabCategorie = Categorie::tous();
         <title>Produits</title>
         <link rel="stylesheet" type="text/css" href="css/commerce.css"/>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/Ajax.js"></script>
     </head>
     <body>
         <div id="container">

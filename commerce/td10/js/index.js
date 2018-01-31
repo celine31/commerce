@@ -10,9 +10,15 @@ function editerProduit(evt, id_produit) {
 }
 function supprimerProduit(evt, id_produit) {
     evt.stopPropagation();
-    if (confirm("êtes vous d’accord")) {
-        location = `supprimer.php?id_produit=${id_produit}`;
-    } else {
-        location = `index.php?`;
+    if (confirm("vous êtes sûr de vouloir supprimer")) {
+        new AjaxPromise('supprimer.php')
+                .send({id_produit : id_produit})
+                .then(reponse => {
+                    reponse = parseInt(reponse);
+                    if (reponse !== false) {
+                        evt.target.parentElement.parentElement.style.display = 'none';
+                    }
+                })
+                .catch(erreur => console.log(`ERREUR : ${erreur}`));
     }
-}       
+}
