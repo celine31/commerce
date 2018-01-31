@@ -29,7 +29,7 @@ if ($submit) {
     if (!$produit->ref || $produit->refExiste()) {
         $tabErreur[] = "référence absente ou invalide ou en doublon";
     }
-    if ($produit->prix === false) {
+    if ($produit->prix === false || $produit->prix >=1000000) {
         $tabErreur[] = "prix invalide ou absent";
     }
     //si ok, INSERT dans la table produit  
