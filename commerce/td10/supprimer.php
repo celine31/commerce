@@ -11,8 +11,8 @@
   }
   echo json_encode($reponse);
  */
-//2ème version pour garantir la stabilité pour de futurs modifications et 
-//éviter des messages d'erreurs en cas de piratages (si une chaine de caractères est passée)
+/*2ème version pour garantir la stabilité pour de futurs modifications et 
+éviter des messages d'erreurs en cas de piratages (si une chaine de caractères est passée)*/
 require_once 'inc/cfg.php';
 header('Content-Type:application/json');
 $reponse = false;
