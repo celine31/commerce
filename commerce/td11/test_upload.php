@@ -1,7 +1,9 @@
 <?php
 require_once 'class/Upload.php';
-$upload = new Upload('photo');
-var_dump($upload);
+require_once 'class/I18n.php';
+if(filter_input(INPUT_POST,'submit')){
+    $upload=new Upload('photo',[],['image/jpeg']);
+}
 ?>
 <!DOCTYPE html>
 <html>

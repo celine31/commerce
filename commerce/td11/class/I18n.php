@@ -5,6 +5,13 @@ class I18n {
     public static function get($message) {
         $language = filter_imput(INPUT_SERVER, 'HTTP_ACCEPT_LANGUAGE');
         $langue = $language ? mb_substr($language, 0, 2) : 'en';
+        if (isset(self::MESSAGE[$langue][$message])) {
+            return self::MESSAGE[$langue][$message];
+        }
+        if($langue !== 'en' && isset(self::MESSAGE['en'][$message])){
+            return self::MESSAGE['en'][$message];
+        }
+        return null;
     }
 
     const MESSAGE = [
@@ -14,10 +21,10 @@ class I18n {
             UPLOAD_ERR_PARTIAL => "Fichier partiellement uploadé.",
             UPLOAD_ERR_NO_FILE => "Aucun fichier présent.",
             UPLOAD_ERR_NO_TMP_DIR => "Dossier temporaire inexistant.",
-            'UPLOAD_ERR_POST_SIZE' => "Fichier trop lourd (post).",
             'UPLOAD_ERR_WRONG_EXTENSION' => "Extension fichier incorrect.",
             'UPLOAD_ERR_WRONG_TYPE' => "Type MIME invalide.",
-            'UPLOAD_ERR_WRONG_EMPTY_FILE' => "Fichier vide."
+            'UPLOAD_ERR_WRONG_EMPTY_FILE' => "Fichier vide.",
+            'UPLOAD_ERR_CANT_WRITE' => "Fichier non écrit"
         ],
         'en' => [
             UPLOAD_ERR_INI_SIZE => "File too big (server side).",
@@ -26,7 +33,7 @@ class I18n {
             UPLOAD_ERR_NO_FILE => "No file.",
             UPLOAD_ERR_NO_TMP_DIR => "Non-existent temporary file.",
         ],
-        'ab' => [
+        'ar' => [
             UPLOAD_ERR_INI_SIZE => ""
         ]
     ];

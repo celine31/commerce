@@ -19,7 +19,6 @@ class Upload {
         $this->tabMIME = $tabMIME;
         //verification que le nom du fichier est bien transmis
         if (!isset($_FILES [$this->nomChamp])) {
-            $this->tabErreur[] = "Fichier trop lourd (post)"; //seul cas où le nom n'est pas conservé
             return;
         }
         $fichier = $_FILES[$this->nomChamp];
@@ -34,22 +33,22 @@ class Upload {
         $this->typeMIME = $fichier['type'];
 
         if ($this->tabErreur) {
-            $this->tabErreur[] = 'todo'; //TODO
+            $this->tabErreur[] = I18n::get($this->codeErreur);
         }
         if (!$this->tabErreur && $this->tabExt && !in_array($this->extension, $tabExt)) {
-            $this->tabErreur[] = "L'extansion du fichier est invalide.";
+            $this->tabErreur[] = I18n::get('UPLOAD_ERR_WRONG_EXTENSION');
         }
         if (!$this->tabMIME && !in_array($this->typeMIME, $this->tabMIME)) {
-            $this->tabErreur[] = "Le type MIME du fichier est invalide.";
+            $this->tabErreur[] = I18n::get('UPLOAD_ERR_WRONG_TYPE');
         }
         if (!$this->octets) {
-            $this->tabErreur[] = "Le fichier est vide.";
+            $this->tabErreur[] = I18n::get('UPLOAD_ERR_WRONG_EMPTY_FILE');
         }
     }
 
     public function sauver($chemin) {
         if (!move_uploaded_file($this->cheminServeur, $chemin)) {
-            $this->tabErreur[] = "Le fichier n'a pas pu être sauvegardé"; //TODO;
+            $this->tabErreur[] = I18n::get('UPLOAD_ERR_CANT_WRITE');
         }
     }
 
