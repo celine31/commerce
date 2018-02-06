@@ -1,0 +1,37 @@
+taille image source:largeur x hauteur
+taille de la zone lue dans la source:largeurSrc x hauteurSrc
+taille cadre cible:largeurCadreDest x hauteurCadreDest
+taille de la zone écrite dans la destination:largeurDest x hauteurDest
+offset x dans la source: xSrc
+offset y dans la source:ySrc
+
+xSrc=0 
+ySrc=0
+ratioSrc = largeur/hauteur
+ratioCadreDest= largeurCadreDest/hauteurCadreDest
+
+IF largeur<=largeurCadreDest && hauteur<=hauteurCadreDest :
+		IF NOT COPY (cheminSrc, cheminDest):
+			'IMAGE_ERR_CANT_WRITE'
+		RETURN
+		
+IF "CONTAIN" : 
+	IF ratioSrc<ratioCadreDest:
+		hauteurDest=hauteurCadreDest	
+		largeurDest=hauteurDest x ratioSrc
+	ELSE : //le ratio peut être égal
+		largeurDest=largeurCadreDest
+		hauteurDest=largeurDest / ratioSrc
+
+ELSE IF "COVER" :
+	IF ratioSrc<ratioCadreDest:
+		largeurSrc=largeur
+		hauteurSrc= largeurSrc / ratioCadreDest
+		ySrc=(hauteur - hauteurSrc) /2
+	ElSE :
+		hauteurSrc=hauteur
+		largeurSrc= hauteurSrc X ratioCadreDest
+		xSrc=(largeur - largeurSrc) /2
+		
+		largeurDest= largeurCadreDest 
+		hauteurSrc= hauteurCadreDest
