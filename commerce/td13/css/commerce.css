@@ -113,9 +113,10 @@ input[type="file"]{
 #vignette{
     width: 300px; 
     height: 300px; 
-    border:1px solid black;
     margin-top:auto;
     margin-bottom:auto;
+    background-position:center;
+    background-repeat: no-repeat;
 }
 
 form #photo{

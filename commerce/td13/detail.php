@@ -2,9 +2,9 @@
 require_once 'inc/cfg.php';
 require_once 'class/Produit.php';
 require_once 'class/Categorie.php';
-
-$id_produit=filter_input(INPUT_GET,'id_produit',FILTER_VALIDATE_INT);
-if(!$id_produit){
+$opt = ['options' => ['min_range' => 1]];
+$id_produit = filter_input(INPUT_GET, 'id_produit', FILTER_VALIDATE_INT, $opt);
+if (!$id_produit) {
 	header('Location:indispo.php');
 	exit("Produit indisponible");
 }
@@ -12,12 +12,11 @@ $req = "SELECT * FROM produit WHERE id_produit={$id_produit}";
 $jeu = $db->query($req);
 $jeu->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Produit');
 $produit = $jeu->fetch();
-if(!$produit){
+if (!$produit) {
 	header('Location:indispo.php');
 	exit("Produit indisponible");
 }
-$categorie = $produit->getCategorie();
-$id_produit = file_exists("../img/prod_{$produit->id_produit}_p.jpg") ? $produit->id_produit : 0;
+$idImg = file_exists("../img/prod_{$produit->id_produit}_p.jpg") ? $produit->id_produit : 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,14 +26,16 @@ $id_produit = file_exists("../img/prod_{$produit->id_produit}_p.jpg") ? $produit
 		<link rel="stylesheet" type="text/css" href="css/commerce.css"/>
 	</head>
 	<body>
+		<header></header>
 		<div id="container">
-			<div class="retour"><a href="index.php">Retour</a></div>
-			<h1><?= $produit->nom ?></h1>
-			<h2><?= $categorie->nom ?></h2>
+			<div class="categorie"><a href="javascript:history.go(-1)"><?= $produit->getCategorie()->nom ?></a> &gt; <?= $produit->nom ?></div>
 			<div id="detailProduit">
-				<img src="../img/prod_<?= $id_produit ?>_p.jpg?alea=<?=rand()?>" alt=""/><!--pour eviter le cache-->
-				<div class="ref"><?= $produit->ref ?></div>
-				<div class="prix"><?= $produit->prix ?></div>
+				<img src="../img/prod_<?= $idImg ?>_p.jpg?alea=<?= rand() ?>" alt=""/>
+				<div>
+					<div class="prix"><?= $produit->prix ?></div>
+					<div class="ref">Référence<br/>
+						<?= $produit->ref ?></div>
+				</div>
 			</div>
 		</div>
 	</body>

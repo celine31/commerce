@@ -151,7 +151,7 @@ $idImg=file_exists("../img/prod_{$produit->id_produit}_v.jpg")? $produit->id_pro
                     <input id="photo" type="file" name="photo"/>
                     <input type="button" value="Parcourir..." onclick="this.form.photo.click()"/>
                     <!--<input type="submit" name="submit" value="Envoyer"/> -->
-                    <div id="vignette" style=" background-image: url('../img/prod<?=$idImg?>_v.jpg?alea=<?=rand()?>')"></div>
+                    <div id="vignette" style=" background-image: url('../img/prod_<?=$idImg?>_v.jpg?alea=<?=rand()?>')"></div>
                 </div>
             </form>
 
