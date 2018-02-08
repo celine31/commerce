@@ -31,7 +31,7 @@ class I18n {
             'UPLOAD_ERR_CANT_WRITE' => "Fichier non écrit"
         ],
         'en' => [
-             'IMAGE_ERR_NO_IMAGE_FOUND'=> "No image found",
+            'IMAGE_ERR_NO_IMAGE_FOUND'=> "No image found",
             'IMAGE_ERR_WRONG_IMAGE_TYPE'=> "Wrong image type",
             'IMAGE_ERR_CANT_WRITE'=> "Can't write image",
             'IMAGE_ERR_OUT_OF_MEMORY'=> " Out of memory",
