@@ -84,7 +84,7 @@ class Connexion {
         if (!$this->jeu) {
             return [];
         }
-        $this->jeu->setFetchMode(FETCH_CLASS || FETCH_PROPS_LATE, $classe);
+        $this->jeu->setFetchMode(PDO::FETCH_CLASS || PDO::FETCH_PROPS_LATE, $classe);
         return $this->jeu->fetchAll();
     }
 
@@ -92,7 +92,7 @@ class Connexion {
         if (!$this->jeu) {
             return null;
         }
-        $this->jeu->setFetchMode(FETCH_CLASS || FETCH_PROPS_LATE, $classe);
+        $this->jeu->setFetchMode(PDO::FETCH_CLASS || PDO::FETCH_PROPS_LATE, $classe);
         return $this->jeu->fetch();
     }
 
