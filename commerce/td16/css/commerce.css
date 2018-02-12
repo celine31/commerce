@@ -1,0 +1,125 @@
+@charset "utf-8";
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: verdana;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+a:hover{
+    color: #F00;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+#container>h1, #container>h2{
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+}
+.blocProduit{
+    width: 400px;
+    margin: 0 10px 20px 10px;
+    padding: 5px;
+    background-color: #DDD;
+    cursor: pointer;
+}
+.blocProduit img{
+    float: left;
+}
+.blocProduit .nom{
+    float: right;
+    font-size: 24px;
+}
+.blocProduit .prix{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.blocProduit .prix:after{
+    content: ' €';
+}
+#detailProduit{
+    width: 800px;
+    padding: 20px;
+}
+#detailProduit img{
+    margin: -20px;
+}
+#detailProduit .ref{
+    float: right;
+    font-size: 50px;
+}
+#detailProduit .prix{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+#detailProduit .prix:after{
+    content: ' €';
+}
+.retour{
+    width: 100%;
+    text-align: start;
+}
+input{
+    height:25px;
+    width:60px;
+    margin:15px;
+}
+select{
+    margin:15px;
+}
+input[type="text"]{
+    height:20px;
+    width:150px;
+}
+input[type="submit"], input[type="button"]{
+    width:150px;
+    border-radius:10px;
+}
+input[type="file"]{
+    width:300px;  
+    border-radius:10px; 
+}       
+#categorie{
+    margin-left:auto;
+    margin-right:auto;
+    padding:10px;
+    width:500px;
+    margin-left: 450px;
+    border:1px solid black;
+    border-radius: 10px;
+    background-color: #dbd7e0;
+}
+.erreur{
+    color: red;
+}
+.modifier{
+    width:80px;
+    height: 40px;
+}
+#vignette{
+    width: 300px; 
+    height: 300px; 
+    margin-top:auto;
+    margin-bottom:auto;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+form #photo{
+    display:none;
+}
+
