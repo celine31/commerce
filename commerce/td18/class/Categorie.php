@@ -1,6 +1,6 @@
 <?php
 
-class Categorie {
+class Categorie implements Databasable{
 
     public $id_categorie;
     public $nom;
